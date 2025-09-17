@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Life Transformation Guide | SuccessLife</title>
+    <title>SuccessLife - Transform Your Life</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -224,6 +224,27 @@
             text-decoration: none;
         }
         
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -239,11 +260,6 @@
             }
         }
     </style>
-    <!-- CPAGrip Content Locker Script -->
-    <script type="text/javascript">var lck = false;</script>
-    <script type="text/javascript" src="https://filestrue.com/script_include.php?id=1843609"></script>
-    <script type="text/javascript">if(!lck){top.location = 'https://filestrue.com/help/ablk.php?lkt=1'; }</script>
-    <noscript>Please enable JavaScript to access this page.<meta http-equiv="refresh" content="0;url=https://filestrue.com/help/enable_javascript.php?lkt=1" ></meta></noscript>
 </head>
 <body>
     <header>
@@ -257,7 +273,11 @@
         <section class="hero">
             <h1>Discover The Secrets To A Fulfilling Life</h1>
             <p>Access our premium guide and transform your mindset, habits, and lifestyle in just 30 days.</p>
-            <button class="cta-button" onclick="call_locker();">GET YOUR GUIDE</button>
+            <button class="cta-button" id="cta-button">GET YOUR GUIDE</button>
+            <div class="loading" id="loading">
+                <div class="loader"></div>
+                <p>Loading your guide...</p>
+            </div>
         </section>
         
         <section class="features">
@@ -355,6 +375,12 @@
         </div>
     </footer>
 
+    <!-- CPAGrip Content Locker Script -->
+    <script type="text/javascript">var lck = false;</script>
+    <script type="text/javascript" src="https://filestrue.com/script_include.php?id=1843609"></script>
+    <script type="text/javascript">if(!lck){top.location = 'https://filestrue.com/help/ablk.php?lkt=1'; }</script>
+    <noscript>Please enable JavaScript to access this page.<meta http-equiv="refresh" content="0;url=https://filestrue.com/help/enable_javascript.php?lkt=1" ></meta></noscript>
+
     <script>
         // FAQ functionality
         document.querySelectorAll('.faq-question').forEach(question => {
@@ -374,22 +400,41 @@
             });
         });
         
-        // Function to call the locker (defined by CPAGrip script)
-        function call_locker() {
-            // This function is defined by the CPAGrip script
-            // It will display the content locker
-            if (typeof call_locker === 'function') {
-                call_locker();
-            } else {
-                alert("Content locker is not loaded yet. Please try again.");
+        // CTA Button functionality
+        document.getElementById('cta-button').addEventListener('click', function() {
+            const loadingElement = document.getElementById('loading');
+            const button = this;
+            
+            // Show loading animation
+            button.style.display = 'none';
+            loadingElement.style.display = 'block';
+            
+            // Try to call the locker function
+            try {
+                if (typeof call_locker === 'function') {
+                    call_locker();
+                } else {
+                    // Fallback if function isn't available
+                    setTimeout(function() {
+                        // Simulate successful completion after 3 seconds
+                        window.location.href = "https://www.mediafire.com/file/nb2yylhorzwj3zs/Lhomme-le-plus-riche-de-Babylone-George-S.-Clason.pdf/file";
+                    }, 3000);
+                }
+            } catch (error) {
+                console.error("Error calling locker:", error);
+                // Fallback to direct download
+                setTimeout(function() {
+                    window.location.href = "https://www.mediafire.com/file/nb2yylhorzwj3zs/Lhomme-le-plus-riche-de-Babylone-George-S.-Clason.pdf/file";
+                }, 2000);
             }
-        }
+        });
         
-        // Function to redirect to Mediafire after offer completion
-        // This function should be called by the locker after completion
-        function unlockContent() {
-            window.location.href = "https://www.mediafire.com/file/nb2yylhorzwj3zs/Lhomme-le-plus-riche-de-Babylone-George-S.-Clason.pdf/file";
-        }
+        // Check if the locker script loaded properly
+        setTimeout(function() {
+            if (typeof call_locker === 'undefined') {
+                console.warn("CPAGrip locker script not loaded properly");
+            }
+        }, 3000);
     </script>
 </body>
 </html>
