@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motivation Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hero {
+      background: url('https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .cta-btn {
+      background: #ff4b2b;
+      color: white;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .cta-btn:hover {
+      background: #ff1c00;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .benefit {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Motivation Hub</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Unlock Your Potential 🚀</h2>
+    <p>Download your free motivational guide and start your journey today.</p>
+    <button class="cta-btn" onclick="openContentLocker()">Get Your Free Guide</button>
+  </section>
+
+  <section id="about">
+    <h3>About Us</h3>
+    <p>We believe motivation is the fuel that drives success. Our free resources will inspire you to take action, stay focused, and achieve your goals.</p>
+  </section>
+
+  <section id="benefits">
+    <h3>Why Choose Us?</h3>
+    <div class="benefits">
+      <div class="benefit">
+        <h4>🔥 Daily Inspiration</h4>
+        <p>Stay motivated with powerful tips and resources.</p>
+      </div>
+      <div class="benefit">
+        <h4>📘 Free Guides</h4>
+        <p>Access high-quality ebooks to boost your mindset.</p>
+      </div>
+      <div class="benefit">
+        <h4>🎯 Goal Setting</h4>
+        <p>Learn strategies to set and achieve your biggest dreams.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 Motivation Hub | All Rights Reserved</p>
+  </footer>
+
+  <!-- Your Content Locker Script -->
+  <script type="text/javascript" src="https://installyourfiles.com/script_include.php?id=1843609"></script>
+  <script>
+    function openContentLocker() {
+      if (typeof CPA === 'object' && CPA.load === 'function') {
+        CPA.load(); // Ouvre le content locker
+      } else {
+        alert("Please wait... Locker is loading.");
+      }
+    }
+  </script>
+</body>
+</html>
